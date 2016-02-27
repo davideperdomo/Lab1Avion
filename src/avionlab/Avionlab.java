@@ -141,17 +141,7 @@ public class Avionlab {
         }while(rep==1);
         //
         
-        /// for(i=0;i<4;i=i+1){
-        ///    for(j=0;j<4;j=j+1){
-        ///        System.out.println(A2[i][j]);
-        ///    }         
-        /// }
-        /// System.out.println("-");
-        /// for(i=0;i<7;i=i+1){
-        ///    for(j=0;j<6;j=j+1){
-        ///        System.out.println(B2[i][j]);
-        ///   }
-        /// }
+       
         
         //2.Reporte
         java.util.Scanner lectura = 
