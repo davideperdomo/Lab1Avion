@@ -16,16 +16,17 @@ public class Avionlab {
      */
     public static void main(String[] args) {
         //Creaciondevariablesymatrices
+        
         int cl;
         int ub=0, ced;
         int ceding;
         int rep;
         String nom= "nombre";
-        int A1[][] = new int[4][4];
-        int A2[][] = new int[4][4];
-        String A3[][] = new String[4][4];
-        int A4[][] = new int[4][4];
-        int A5[][] = new int[4][4];
+        int A1[][] = new int[2][4];
+        int A2[][] = new int[2][4];
+        String A3[][] = new String[2][4];
+        int A4[][] = new int[2][4];
+        int A5[][] = new int[2][4];
         int B1[][] = new int[7][6];
         int B2[][] = new int[7][6];
         String B3[][] = new String[7][6];
@@ -34,28 +35,28 @@ public class Avionlab {
         
         int i; int j;
         int n;int n2;int n3;
-        for(i=0; i<4; i=i+1){
-            n=1;
+        n=1;
+        for(i=0; i<2; i=i+1){
             for(j=0; j<4; j=j+1){
                 A1[i][j]=n;
                 n=n+1;
             }
         }
-        for(i=0; i<4; i=i+1){
+        for(i=0; i<2; i=i+1){
             n2=1;
             for(j=0; j<2; j=j+1){
                 A5[i][j]=n2;
                 n2=n2+1;
             }
         }
-        for(i=0; i<4; i=i+1){
+        for(i=0; i<2; i=i+1){
             n3=2;
             for(j=2; j<4; j=j+1){
                 A5[i][j]=n3;
                 n3=n3-1;
             }
         }       
-             
+        System.out.println("ll");    
         n=9;
         for(i=0; i<7; i=i+1){
             for(j=0; j<6; j=j+1){
@@ -77,6 +78,7 @@ public class Avionlab {
                 n3=n3-1;
             }
         }
+        System.out.println("ll");
         //
         //1.Asignacion de sillas
         do{
@@ -141,6 +143,33 @@ public class Avionlab {
         }while(rep==1);
         //
         
+        System.out.println("Posicion de sillas en el avion");
+        for(i=0;i<2;i++){
+            for(j=0;j<4; j++){
+                System.out.print(A1[i][j]+" ");
+            }
+            System.out.println("");
+        }
+        for(i=0;i<7;i++){
+            for(j=0;j<6; j++){
+                System.out.print(B1[i][j]+" ");
+            }
+            System.out.println("");
+        }
+        
+        System.out.println("Silla ocupadas(1) disponibles(0)");
+        for(i=0;i<2;i++){
+            for(j=0;j<4; j++){
+                System.out.print(A2[i][j]+" ");
+            }
+            System.out.println("");
+        }
+        for(i=0;i<7;i++){
+            for(j=0;j<6; j++){
+                System.out.print(B2[i][j]+" ");
+            }
+            System.out.println("");
+        }
        
         
         //2.Reporte
@@ -159,7 +188,7 @@ public class Avionlab {
     }
     public static int EjecutivasOcupadas(int A2[][]){
         int i, j, cont=0;
-        for(i=0; i<4; i=i+1){
+        for(i=0; i<2; i=i+1){
             for(j=0; j<4; j=j+1){
                 if(A2[i][j]==1){
                     cont=cont+1;
@@ -172,7 +201,7 @@ public class Avionlab {
     
      public static int LocalizarCedula (int A1[][], int A4[][], int B1[][], int B4[][], int ceding){
         int i, j, ret=0;   
-        for(i=0; i<4; i=i+1){
+        for(i=0; i<2; i=i+1){
             for(j=0; j<4; j=j+1){
                 if(A4[i][j]==ceding){
                     ret= A1[i][j];
@@ -205,12 +234,12 @@ public class Avionlab {
     
     public static void NombresIguales (String A3[][], int A1[][]){
         int i, j, ii, jj;
-        for(i=0; i<7; i=i+1){
-            for(j=0; i<6; j=j+1){
-                for(ii=0; ii<7;ii=ii+1){
-                    for(jj=0; jj<6; jj=jj+1){
+        for(i=0; i<2; i=i+1){
+            for(j=0; i<4; j=j+1){
+                for(ii=0; ii<2;ii=ii+1){
+                    for(jj=0; jj<4; jj=jj+1){
                         if(A3[i][j]==A3[ii][jj] && i!=ii && j!=jj){
-                            System.out.println("Los pasajeros de las sillas" + A1[i][j] + "y" + A1[ii][jj] + "tienen el mismo nombre: " + A3[i][j]);
+                            System.out.println("Los pasajeros de las sillas " + A1[i][j] + " y " + A1[ii][jj] + " tienen el mismo nombre: " + A3[i][j]);
                         }
                     } 
                 }
