@@ -7,7 +7,7 @@ package avionlab;
 
 /**
  *
- * @author Monica
+ * @author David Perdomo
  */
 public class Avionlab {
 
